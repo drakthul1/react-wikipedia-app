@@ -1,38 +1,102 @@
-.App {
+
+@import url('https://fonts.googleapis.com/css2?family=Arsenal&family=Roboto:wght@300&display=swap');
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #FFE5B4;
+}
+
+h1 {
+  color: #FF7F50;
+  font-size: 50px;
   text-align: center;
+  margin-bottom: 100px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.search-box {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+  transition: 0.5s;
+}
+.search-box input {
+  display: block;
+  appearance: none;
+  outline: none;
+  border: none;
+  padding: 20px;
+  width: 100%;
+  transition: 0.5s;
 }
 
-.App-link {
-  color: #61dafb;
+.search-box:focus-within {
+  box-shadow: 3px 6px 2px rgba(0.4, 0.2, 1.3, 0.6);
+  transform: translateY(-8px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.result-count {
+  font-size: 20px;
+  color: #FF7F50;
+}
+
+.results {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.result {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background-color: rgb(150, 66, 66);
+  transition: 0.5s;
+  
+}
+.result:hover {
+  box-shadow: 3px 6px 2px rgba(0.4, 0.2, 1.3, 0.6);
+  
+}
+
+.result h3 {
+  color: #FF7F50;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.result p {
+  color: greenyellow;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+.result a {
+  display: inline-block;
+  padding: 16px 14px;
+  background-color:  #FFD700;
+  border-radius: 20px;
+  font-weight: 800px;
+  text-decoration: wavy;
+  transition: 0.5s;
+  color: rgb(209, 33, 200);
+}
+.result a:hover {
+  background-color: #fbcbc9;
 }
