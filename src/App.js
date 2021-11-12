@@ -1,12 +1,13 @@
 import "./App.css";
-import { useState} from "react";
+import { useState } from "react";
 
 function App() {
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [searchInfo, setSearchInfo] = useState({});
 
-  const handleSearch = async () => {
+  const handleSearch = async (e) => {
+    e.preventDefault();
     if (search === "") {
       return;
     }
@@ -41,12 +42,14 @@ function App() {
       </header>
       <div className="results">
         {searchResult.map((result, index) => {
-          const url = `https://en.wikipedia.org/?curid=${result.pageid}`
+          const url = `https://en.wikipedia.org/?curid=${result.pageid}`;
           return (
             <div className="result" key={index}>
               <h3>{result.title}</h3>
-              <p dangerouslySetInnerHTML={{__html: result.snippet}}></p>
-              <a href={url} target="_blank" rel="noreferrer">More Information Here</a>
+              <p dangerouslySetInnerHTML={{ __html: result.snippet }}></p>
+              <a href={url} target="_blank" rel="noreferrer">
+                More Information Here
+              </a>
             </div>
           );
         })}
